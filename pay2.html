@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment 2</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS if needed -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Payment for UST</h1>
+                <!-- Display the price received from the query parameter -->
+                <h2>Price: Loading...</h2>
+            </div>
+        </div>
+    </div>
+    <div id="textContainer">
+        <p>USDT Address : <span id="textToCopy">TU82yRMK5CD3uiGrMagjfcT3U6DPEeLw34</span></p>
+        <button id="copyButton">Copy</button>
+    </div>
+    <div id="notification" style="display: none;">Text copied to clipboard!</div>
+
+    <!-- JavaScript to populate price -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            // Decode URL parameters
+            const price = decodeURIComponent(urlParams.get("price"));
+
+            // Populate the price label
+            const priceLabel = document.querySelector("h2");
+            priceLabel.textContent = `Price: ${price}`;
+        });
+    </script>
+
+    
+<script>
+    const textToCopy = document.getElementById('textToCopy');
+    const copyButton = document.getElementById('copyButton');
+    const notification = document.getElementById('notification');
+
+    copyButton.addEventListener('click', function () {
+        // Create a textarea element to temporarily hold the text
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy.textContent;
+
+        // Append the textarea to the document
+        document.body.appendChild(textArea);
+
+        // Select the text in the textarea
+        textArea.select();
+        textArea.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text to the clipboard
+        document.execCommand('copy');
+
+        // Remove the temporary textarea
+        document.body.removeChild(textArea);
+
+        // Show the success notification
+        notification.style.display = 'block';
+
+        // Hide the notification after 2 seconds
+        setTimeout(function () {
+            notification.style.display = 'none';
+        }, 2000);
+    });
+</script>
+</body>
+</html>

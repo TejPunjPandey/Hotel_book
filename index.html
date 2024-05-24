@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Lobster&family=Young+Serif&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Hotels</a></li>
+            </ul>
+            <a    href="login.html"class="register-btn">Register Now</a>
+        </nav>
+        <div class="container">
+            <h1>Find Your Place to Relax</h1>
+            <div class="search-bar">
+                <form>
+                    <div class="location-input">
+                        <label>Location</label>
+                        <input type="text" placeholder="Where you want to stay?">
+                    </div>
+                    <div>
+                        <label>Check in</label>
+                        <input type="text" placeholder="Add Date">
+                    </div>
+                    <div>
+                        <label>Check out</label>
+                        <input type="text" placeholder="Add Date">
+                    </div>
+                    <div>
+                        <label>Guest</label>
+                        <input type="text" placeholder="Add Guest">
+                    </div>
+                    <button type="submit"><img src="images/search.png"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <section class="hotel-cards">
+        <div id="1" onclick="redirectToHotelDetail(1)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/manuel-moreno-DGa0LQ0yDPc-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Raddison Blu</h5>
+                    <p class="card-text">Welcome to Raddison Blu..</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price1" class="list-group-item">Price : $500</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="2" onclick="redirectToHotelDetail(2)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/rod-long-2P_ifaetDm0-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> Clark shiraz</h5>
+                    <p class="card-text">Welcome to Clark Shiraz.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price2" class="list-group-item">Price : $550</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="3" onclick="redirectToHotelDetail(3)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/antonio-janeski-VIGLnzEpOm4-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Crimson Palace</h5>
+                    <p class="card-text"> Welcome to Crimson Palace.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price3" class="list-group-item">Price : $600</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="4" onclick="redirectToHotelDetail(4)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/francesca-saraco-_dS27XGgRyQ-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Double Tree By Hilton</h5>
+                    <p class="card-text">Welcome to Double Tree By Hilton.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price4" class="list-group-item">Price : $800</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="5" onclick="redirectToHotelDetail(5)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/fernando-alvarez-rodriguez-M7GddPqJowg-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Lemon Tree</h5>
+                    <p class="card-text">Welcome to Lemon Tree.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price5" class="list-group-item">Price : $1000</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="6" onclick="redirectToHotelDetail(6)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/jeffrey-francisco-_Ei9f33bQ1A-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Jaypee</h5>
+                    <p class="card-text"> Welcome to Jaypee.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price6" class="list-group-item">Price : $400</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="7" onclick="redirectToHotelDetail(7)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/valeriia-bugaiova-_pPHgeHz1uk-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Courtyard By Marriott</h5>
+                    <p class="card-text"> Welcome to Courtyard By Marriott.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price7" class="list-group-item">Price : $450</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="8" onclick="redirectToHotelDetail(8)">
+            <div class="card" style="width: 18rem;">
+                <img src="images/the-anam-_twiIcIsp2s-unsplash.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">ITC Mughal</h5>
+                    <p class="card-text"> Welcome to ITC Mughal.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                    <li id="price8" class="list-group-item">Price : $500</li>
+                </ul>
+                <div class="card-body link-cards">
+                    <div class="link-a"><a href="#" class="card-link">Card link</a></div>
+                    <div class="link-a"><a href="#" class="card-link">Another link</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Repeat this structure for other cards, updating the IDs accordingly -->
+        <!-- ... (other card divs) ... -->
+    </section>
+    <footer>
+        <p>&copy; 2023 Hotel Page. All rights reserved.</p>
+    </footer>
+    <script>
+        function redirectToHotelDetail(id) {
+            const card = document.getElementById(id);
+            const title = card.querySelector('.card-title').textContent;
+            const imageSrc = card.querySelector('.card-img-top').src;
+            const description = card.querySelector('.card-text').textContent;
+            const price = card.querySelector('.list-group-item#price' + id).textContent.split(':')[1].trim();
+
+            // Encode data for URL
+            const encodedTitle = encodeURIComponent(title);
+            const encodedImageSrc = encodeURIComponent(imageSrc);
+            const encodedDescription = encodeURIComponent(description);
+            const encodedPrice = encodeURIComponent(price);
+
+            window.location.href = `hotellist.html?title=${encodedTitle}&imageSrc=${encodedImageSrc}&description=${encodedDescription}&price=${encodedPrice}`;
+        }
+    </script>
+</body>
+</html>

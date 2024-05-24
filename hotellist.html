@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Details</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS if needed -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap JS (jQuery and Popper.js are required dependencies) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="hotel-list">
+    <div class="container container2">
+        <div class="row">
+            <!-- Display the selected card content here -->
+            <div class="col-md-6 card2" id="hotel-details">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <!-- Display the price here -->
+                        <p class="card-price"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 card-right">
+                <!-- Right side content for booking, amenities, etc. -->
+                <h2>Book Now</h2>
+                <div>
+                    <p><strong>Amenities:</strong></p>
+                    <ul>
+                        <li>Kitchen</li>
+                        <li>Balcony</li>
+                        <li>AC</li>
+                        <li>Parking</li>
+                        <li>Rooms</li>
+                    </ul>
+                </div>
+                <a href="payment.html" class="btn btn-danger" id="bookNowBtn">Book Now</a>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- JavaScript to populate card details -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            // Decode URL parameters
+            const title = decodeURIComponent(urlParams.get("title"));
+            const imageSrc = decodeURIComponent(urlParams.get("imageSrc"));
+            const description = decodeURIComponent(urlParams.get("description"));
+            const price = decodeURIComponent(urlParams.get("price"));
+
+           
+
+            // Populate the card with details
+            const card = document.querySelector("#hotel-details .card");
+            card.querySelector(".card-img-top").src = imageSrc;
+            card.querySelector(".card-title").textContent = title;
+            card.querySelector(".card-text").textContent = description;
+            const bookNowBtn = document.getElementById("bookNowBtn");
+            
+            bookNowBtn.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            window.location.href = `payment.html?price=${price}`;
+        });
+            // Populate the price
+            card.querySelector(".card-price").textContent = "Price: " + price;
+        });
+    </script>
+    <!-- Include Bootstrap JS and other scripts as before -->
+</body>
+</html>

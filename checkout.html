@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include your custom CSS if needed -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap JS (jQuery and Popper.js are required dependencies) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Display the price received from the query parameter -->
+                <h2 id="priceLabel">Price: Loading...</h2>
+            </div>
+        </div>
+        
+        <!-- Display images -->
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <img src="https://i.pinimg.com/564x/6a/93/60/6a93605ca4e3cad5194521c38236f4ac.jpg" alt="Image 1" onclick="redirectToPayment('pay1.html')">
+            </div>
+            <div class="col-md-4">
+                <img src="https://i.pinimg.com/564x/a4/40/d4/a440d4b512f4d2b9b63d3ab8818fc9e3.jpg" alt="Image 2" onclick="redirectToPayment('pay2.html')">
+            </div>
+            <div class="col-md-4">
+                <img src="https://i.pinimg.com/564x/2e/ec/b2/2eecb261171ef7697a4b3fea0a3c88f1.jpg" alt="Image 3" onclick="redirectToPayment('pay3.html')">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to populate price and redirect to payment page -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            // Decode URL parameters
+            const price = decodeURIComponent(urlParams.get("price"));
+
+            // Populate the price label
+            const priceLabel = document.getElementById("priceLabel");
+            priceLabel.textContent = `Price: ${price}`;
+        });
+
+        function redirectToPayment(paymentPage) {
+            window.location.href = paymentPage + window.location.search;
+        }
+    </script>
+</body>
+</html>
